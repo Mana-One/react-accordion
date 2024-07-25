@@ -1,0 +1,10 @@
+details { overflow: hidden; }
+
+details summary {
+	cursor: pointer;
+	/* list-style-type: none; */
+}
+
+details summary > * {
+	display: inline;
+}
