@@ -1,16 +1,16 @@
 import './App.css'
 import Accordion from './components/Accordion'
-import AccordionController from './components/AccordionController'
+import AccordionGroup from './components/AccordionGroup'
 
 function App() {
-  return (
-    <>
+	return (
+		<>
 			{/* These Accordions can be opened independently */}
-      <Accordion>
+			<Accordion>
 				<Accordion.Summary>Title 1</Accordion.Summary>
 				<Accordion.Content>Hello 1</Accordion.Content>
 			</Accordion>
-      <Accordion opened>
+			<Accordion opened>
 				<Accordion.Summary>Title 2</Accordion.Summary>
 				<Accordion.Content>Hello 2</Accordion.Content>
 			</Accordion>
@@ -20,7 +20,7 @@ function App() {
 			</Accordion>
 
 			<div className='controller-wrapper'>
-				<AccordionController>
+				<AccordionGroup groupName='group1'>
 					{/* Only one accordion can be opened at any given time */}
 					<Accordion>
 						<Accordion.Summary>Title 4</Accordion.Summary>
@@ -40,10 +40,10 @@ function App() {
 							</ul>
 						</Accordion.Content>
 					</Accordion>
-				</AccordionController>
+				</AccordionGroup>
 			</div>
-    </>
-  )
+		</>
+	)
 }
 
 export default App

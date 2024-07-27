@@ -2,6 +2,7 @@
 import './Accordion.css'
 import AccordionContext from './Accordion.context'
 import { forwardRef } from 'react'
+import useAccordionGroup from '../AccordionGroup/useAccordionGroup'
 
 /**
  * @typedef {import('react').ReactNode} ReactNode
@@ -17,11 +18,13 @@ import { forwardRef } from 'react'
  * @param {boolean?} props.opened
  * @param {(() => void)?} props.onToggle
  */
-export default forwardRef(function Accordion({ children, id, opened, onToggle }, ref) {
+export default forwardRef(function Accordion({ children, opened, onToggle }, ref) {
+	const { name } = useAccordionGroup()
+
 	return (
 		<AccordionContext.Provider value={true}>
 			<details 
-				id={id} 
+				name={name}
 				ref={ref} 
 				open={opened}
 				onToggle={onToggle}>
